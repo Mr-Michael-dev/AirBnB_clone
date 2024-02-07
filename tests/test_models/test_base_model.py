@@ -39,12 +39,12 @@ class TestBaseModel(unittest.TestCase):
     def test_unique_ids(self):
         """Test if generated ids are unique"""
 
-        self.assertNotEqual(self.base_1.id, base_2.id, "ids must be different")
+        self.assertNotEqual(self.base_1.id, self.base_2.id, "ids must be different")
 
     def test_unique_created_at(self):
         """Test if generated created_at are unique"""
 
-        self.assertNotEqual(self.base_1.created_at, base_2.created_at, "created datetime must be different")
+        self.assertNotEqual(self.base_1.created_at, self.base_2.created_at, "created datetime must be different")
     
     def test_save(self):
         """Test if save properly updates the updated_at attribute"""
