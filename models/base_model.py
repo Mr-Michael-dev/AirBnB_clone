@@ -24,13 +24,23 @@ class BaseModel:
         all the keys/values of the instance
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
-        class instantiation method
+        Constructor method
         """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if kwargs:
+            for key, value in kwargs.items():
+                if key != "__class__":
+                    if key == "created_at":
+                        setattr(self, key, datetime.fromisoformat(value))
+                    elif key == "updated_at":
+                        setattr(self, key, datetime.fromisoformat(value))
+                    else:
+                        setattr(self, key, value)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """
