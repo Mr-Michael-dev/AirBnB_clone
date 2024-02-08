@@ -49,13 +49,13 @@ class BaseModel:
         my_str = f"[BaseModel] ({self.id}) {self.__dict__}"
 
         return my_str
-    
+
     def save(self):
         """
         updates 'updated_at' with the current datetime
         """
         self.updated_at = datetime.now()
-    
+
     def to_dict(self):
         """
         Converts the BaseModel instance to a dictionary
@@ -65,7 +65,7 @@ class BaseModel:
         for key, value in my_dict.items():
             if isinstance(value, datetime):
                 my_dict[key] = value.isoformat()
-        
+
         my_dict['__class__'] = 'BaseModel'
 
         return my_dict
