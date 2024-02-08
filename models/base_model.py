@@ -36,7 +36,7 @@ class BaseModel:
         """
         prints the string representation of the instance
         """
-        my_str = f"[BaseModel] ({self.id} self.__dict__)"
+        my_str = f"[BaseModel] ({self.id}) {self.__dict__}"
 
         return my_str
     
@@ -48,5 +48,14 @@ class BaseModel:
     
     def to_dict(self):
         """
-        Returns the dictionary representation of the BaseModel
+        Converts the BaseModel instance to a dictionary
         """
+        my_dict = self.__dict__.copy()
+
+        for key, value in my_dict.items():
+            if isinstance(value, datetime):
+                my_dict[key] = value.isoformat()
+        
+        my_dict['__class__'] = 'BaseModel'
+
+        return my_dict
