@@ -66,6 +66,6 @@ class BaseModel:
             if isinstance(value, datetime):
                 my_dict[key] = value.isoformat()
 
-        my_dict['__class__'] = 'BaseModel'
+        my_dict['__class__'] = self.__class__.__name__
 
         return my_dict
