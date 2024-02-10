@@ -41,7 +41,6 @@ class FileStorage:
         """
         from models.base_model import BaseModel
 
-
         def serialize(obj):
             if isinstance(obj, BaseModel):
                 return obj.to_dict()

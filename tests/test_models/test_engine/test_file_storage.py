@@ -15,7 +15,6 @@ class TestFileStorage(unittest.TestCase):
 
         self.storage = FileStorage()
 
-
     def tearDown(self):
         """Teardown method"""
 
@@ -45,10 +44,11 @@ class TestFileStorage(unittest.TestCase):
     def test_save_method(self):
         """Test for save method"""
         pass
-    
+
     def test_reload_method(self):
         """Test for reload method"""
         pass
+
 
 if __name__ == '__main__':
     unittest.main()
