@@ -75,6 +75,23 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     print("** no instance found **")
 
+    def do_all(self, line):
+        """
+        Prints all string representation of all instances
+        based or not on the class name.
+        Ex: $ all BaseModel or $ all.
+        """
+        from models.__init__ import storage
+        if line:
+            try:
+                classs = eval(line.split()[0])
+            except NameError:
+                print("** class doesn't exist **")
+                return
+                print([str(obj) for obj in storage.all().values() if isinstance(obj, cls)])
+        else:
+            print([str(obj) for obj in storage.all().values()])
+
 
     def do_EOF(self, line):
         """Handles end of the file to exit the program"""
