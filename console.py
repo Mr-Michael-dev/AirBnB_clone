@@ -93,6 +93,18 @@ class HBNBCommand(cmd.Cmd):
             print([str(obj) for obj in storage.all().values()])
 
 
+    def do_update(self, line):
+        args = line.split()
+        if len(args) == 0:
+            print("** class name missing **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        elif len(args) == 2:
+            print("** value missing **")
+        elif len(args) == 3:
+            class_name, attribut_name, attribut_value = args
+
+
     def do_EOF(self, line):
         """Handles end of the file to exit the program"""
         exit(0)
