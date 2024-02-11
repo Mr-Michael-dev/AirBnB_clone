@@ -46,7 +46,7 @@ class BaseModel:
         """
         prints the string representation of the instance
         """
-        my_str = f"[BaseModel] ({self.id}) {self.__dict__}"
+        my_str = f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
         return my_str
 
