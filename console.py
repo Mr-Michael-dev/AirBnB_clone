@@ -1,11 +1,40 @@
 #!/usr/bin/python3
 """This module defines the  console"""
 import cmd
+from models.base_model import BaseModel
 
 class HBNBCommand(cmd.Cmd):
     """This is all about the functions in the HBNB command"""
 
     prompt = "(hbnb) "
+
+
+    def do_create(self, line):
+        """
+        Creates a new instance of BaseModel,
+        saves it (to the JSON file) and prints the id.
+        Ex: $ create BaseModel
+        """
+
+        if line:
+            if line == "BaseModel":
+                base = BaseModel()
+                base.save()
+                print(base.id)
+            else:
+                print("** class doesn't exist **")
+        else:
+            print("** class name missing **")
+
+
+    def do_show(self, line):
+        """
+        Prints the string representation of an instance
+        based on the class name and id. Ex: $ show BaseModel 1234-1234-1234.
+        """
+        
+
+    
 
 
     def do_EOF(self, line):
