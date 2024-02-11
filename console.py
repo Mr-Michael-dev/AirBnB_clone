@@ -5,7 +5,7 @@ import cmd
 class HBNBCommand(cmd.Cmd):
     """This is all about the functions in the HBNB command"""
 
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
 
 
     def do_EOF(self, line):

@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""
-This module represents a BaseModel class.
-it defines all common attributes/methods for other classes
-"""
+"""This module represents a BaseModel class.
+it defines all common attributes/methods for other classes"""
 from datetime import datetime
 import uuid
 from models.__init__ import storage
