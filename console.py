@@ -30,25 +30,48 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, line):
         """
         Prints the string representation of an instance
-        based on the class name and id. Ex: $ show BaseModel 1234-1234-1234.
+        based on the class name and id.
+        Ex: $ show BaseModel 1234-1234-1234.
         """
         from models.__init__ import storage
         args = line.split()
         if len(args) == 0:
             print("** class name missing **")
         elif len(args) == 1:
-            print("** instance id missing")
+            print("** instance id missing **")
         elif len(args) == 2:
-            arg1, arg2 = args
-            if arg1 != "BaseModel":
-                print("** class doesn't exist ***")
+            class_name, instance_id = args
+            objects = storage.all()
+            instance_key = "{}.{}".format(class_name, instance_id)
+            if instance_key in objects:
+                print(objects[instance_key])
             else:
-                instance = f"{arg1}.{arg2}"
-                for key, value in storage.all().items():
-                    if key in instance:
-                        print(value)
-                    else:
-                        print("** no instance found **")
+                print("** no instance found **")
+
+
+
+
+
+        # objects = storage.all()
+        # instance_key = ("{}.{}".format(class_name, instance_id))
+        # if instance_key in storage.all():
+        #     print(objects[instance_key])
+        # else:
+        #     print("** no instance found **")
+
+
+
+
+            # arg1, arg2 = args
+            # if arg1 != str(__class__.__name__):
+            #     print("** class doesn't exist ***")
+            # else:
+            #     instance = f"{arg1}.{arg2}"
+            #     for key, value in storage.all().items():
+            #         if key in instance:
+            #             print(value)
+            #         else:
+            #             print("** no instance found **")
 
     def do_EOF(self, line):
         """Handles end of the file to exit the program"""
