@@ -32,10 +32,23 @@ class HBNBCommand(cmd.Cmd):
         Prints the string representation of an instance
         based on the class name and id. Ex: $ show BaseModel 1234-1234-1234.
         """
-        
-
-    
-
+        from models.__init__ import storage
+        args = line.split()
+        if len(args) == 0:
+            print("** class name missing **")
+        elif len(args) == 1:
+            print("** instance id missing")
+        elif len(args) == 2:
+            arg1, arg2 = args
+            if arg1 != "BaseModel":
+                print("** class doesn't exist ***")
+            else:
+                instance = f"{arg1}.{arg2}"
+                for key, value in storage.all().items():
+                    if key in instance:
+                        print(value)
+                    else:
+                        print("** no instance found **")
 
     def do_EOF(self, line):
         """Handles end of the file to exit the program"""
