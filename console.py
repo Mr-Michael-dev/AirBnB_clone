@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This module defines the  console"""
+"""
+This module defines the console
+"""
 import cmd
 from models.base_model import BaseModel
 
@@ -60,16 +62,13 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 2:
             class_name, instance_id = args
             objects = storage.all()
-            if class_name.lower() not in storage.classes():
+            if class_name not in storage.all():
                 print("** class doesn't exist **")
             else:
                 instance_key = "{}.{}".format(class_name, instance_id)
                 if instance_key in objects:
                     del objects[instance_key]
                     storage.save()
-                    if not any(instance.startswith(class_name + '.')
-                    for instance in objects.keys()):
-                        del storage.classes()[class_name.lower()]
                 else:
                     print("** no instance found **")
 
@@ -82,11 +81,12 @@ class HBNBCommand(cmd.Cmd):
         from models.__init__ import storage
         if line:
             try:
-                classs = eval(line.split()[0])
+                class_name = eval(line.split()[0]__name__)
             except NameError:
                 print("** class doesn't exist **")
                 return
-            print([str(obj) for obj in storage.all().values() if is instance(obj, cls)])
+            print([str(obj) for obj in storage.all().values()
+                   if isinstance(obj, eval(class_name))])
         else:
             print([str(obj) for obj in storage.all().values()])
 

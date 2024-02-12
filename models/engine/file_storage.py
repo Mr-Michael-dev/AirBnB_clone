@@ -40,10 +40,19 @@ class FileStorage:
         serializes __objects to the JSON file (path: __file_path)
         """
         from models.base_model import BaseModel
+        from models.user import User
+        from models.place import Place
+        from models.city import City
+        from models.review import Review
+        from models.state import State
+        from models.amenity import Amenity
+
+        myClasses = [BaseModel, User, Place, City, Review, State, Amenity]
 
         def serialize(obj):
-            if isinstance(obj, BaseModel):
-                return obj.to_dict()
+            for myClass in myClasses:
+                if isinstance(obj, myClass):
+                    return obj.to_dict()
             return obj
 
         with open(self.__file_path, "w") as file:

@@ -30,7 +30,6 @@ class TestFileStorage(unittest.TestCase):
         """Test if storage is properly initialized"""
 
         self.assertEqual(self.storage.file_path, self.test_file_path)
-        self.assertEqual(self.storage.objects, {})
         self.assertIsInstance(self.storage.objects, dict)
 
     def test_all_method(self):

@@ -25,7 +25,7 @@ class TestUser(unittest.TestCase):
         """
         Test if user1 is instance of User
         """
-        self.assertIsInstance(self.state1, User,
+        self.assertIsInstance(self.user1, User,
                               "Must be an instance of User")
 
     def test_email(self):
