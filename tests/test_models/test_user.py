@@ -21,6 +21,13 @@ class TestUser(unittest.TestCase):
         """setup method for the test cases"""
         self.user1 = User()
 
+    def test_instance_of_User(self):
+        """
+        Test if user1 is instance of User
+        """
+        self.assertIsInstance(self.state1, User,
+                              "Must be an instance of User")
+
     def test_email(self):
         """Test if User has email attribute"""
         self.assertTrue(hasattr(self.user1, 'email'))
