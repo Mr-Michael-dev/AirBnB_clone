@@ -83,7 +83,7 @@ class HBNBCommand(cmd.Cmd):
         from models.__init__ import storage
         if line:
             try:
-                class_name = eval(line.split()[0]__name__)
+                class_name = eval(line.split()[0].__name__)
             except NameError:
                 print("** class doesn't exist **")
                 return
