@@ -86,7 +86,7 @@ class HBNBCommand(cmd.Cmd):
             except NameError:
                 print("** class doesn't exist **")
                 return
-            print([str(obj) for obj in storage.all().values() if isinstance(obj, cls)])
+            print([str(obj) for obj in storage.all().values() if is instance(obj, cls)])
         else:
             print([str(obj) for obj in storage.all().values()])
 
