@@ -24,7 +24,7 @@ class Place(BaseModel):
             it will be the list of Amenity.id later
     """
 
-    city_id =  ""
+    city_id = ""
     user_id = ""
     name = ""
     description = ""
@@ -35,7 +35,7 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
-    
+
     def __init__(self, *args, **kwargs):
         """Instantiation method"""
 

@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """
-This module defines the console
+This module defines the console for HBNB
 """
 import cmd
 from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
-    """This is all about the functions in the HBNB command"""
+    """
+    This is all about the functions in the HBNB command
+    """
 
     prompt = "(hbnb) "
 
