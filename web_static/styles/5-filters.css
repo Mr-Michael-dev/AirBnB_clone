@@ -6,10 +6,10 @@ section.filters{
     border-radius: 4px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-evenly;
 }
 
-button{
+section button{
     font-size: 18px;
     background-color: #FF5A5F;
     color: #FFFFFF;
@@ -22,4 +22,24 @@ button{
 
 button:hover{
     opacity: 90%;
+}
+
+section div.locations, section div.amenities{
+    height: 100%;
+    width: 25%;
+}
+
+section div.amenities{
+    border-right: 1px solid #DDDDDD;
+}
+
+section.filters h3{
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+section.filters h4{
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 0;
 }
