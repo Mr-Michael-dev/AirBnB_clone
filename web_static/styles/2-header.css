@@ -1,17 +1,5 @@
 header {
-    background-color: #ffffff;
+    background-color: #FF0000;
     height: 70px;
     width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    border-bottom: 1px solid #CCCCCC;
-}
-
-div.site-logo {
-    background-image: url(../images/logo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 30%;
-    height: 100%;
-    margin-left: 20px;
 }
