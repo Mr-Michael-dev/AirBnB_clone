@@ -53,7 +53,7 @@
     width: 100px;
 }
 
-.max_guest > p, .number_rooms > p, .number_bedrooms > p {
+.max_guest > p, .number_rooms > p, .number_bathrooms > p {
     margin: 0;
 }
 
@@ -73,6 +73,6 @@
 .logo_bath {
     background-image: url(../images/icon_bath.png);
     background-repeat: no-repeat;
-    width: 50px;
+    width: 45px;
     height: 50px;
 }
